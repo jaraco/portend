@@ -7,16 +7,20 @@ import portend
 
 
 def socket_infos():
-	"""
-	Generate addr infos for connections to localhost
-	"""
-	host = None  # all available interfaces
-	port = portend.find_available_local_port()
-	family = socket.AF_UNSPEC
-	socktype = socket.SOCK_STREAM
-	proto = 0
-	flags = socket.AI_PASSIVE
-	return socket.getaddrinfo(host, port, family, socktype, proto, flags)
+    """
+    Generate addr infos for connections to localhost
+    and if IPv6 is enabled to ::1 too.
+    """
+    host = None  # all available interfaces
+    port = portend.find_available_local_port()
+    if portend.is_ipv6_enabled():
+        family = socket.AF_UNSPEC
+    else:
+        family = socket.AF_INET
+    socktype = socket.SOCK_STREAM
+    proto = 0
+    flags = socket.AI_PASSIVE
+    return socket.getaddrinfo(host, port, family, socktype, proto, flags)
 
 
 def id_for_info(info):

@@ -18,6 +18,15 @@ import platform
 from tempora import timing
 
 
+def is_ipv6_enabled():
+    ipv6 = True
+    try:
+        sss = socket.socket(socket.AF_INET6, socket.SOCK_STREAM)
+    except Exception:
+        ipv6 = False
+    return ipv6
+
+
 def client_host(server_host):
 	"""Return the host on which a client can connect to the given listener."""
 	if server_host == '0.0.0.0':
@@ -37,7 +46,7 @@ class Checker(object):
 
 	def assert_free(self, host, port=None):
 		"""
-		Assert that the given addr is free
+		Checks (doesn't raise assertion) that the given addr is free
 		in that all attempts to connect fail within the timeout
 		or raise a PortNotFree exception.
 
@@ -45,24 +54,25 @@ class Checker(object):
 
 		>>> Checker().assert_free('localhost', free_port)
 		>>> Checker().assert_free('127.0.0.1', free_port)
-		>>> Checker().assert_free('::1', free_port)
 
 		Also accepts an addr tuple
 
-		>>> addr = '::1', free_port, 0, 0
+		>>> addr = '127.0.0.1', free_port, 0, 0
 		>>> Checker().assert_free(addr)
 
 		Host might refer to a server bind address like '::', which
 		should use localhost to perform the check.
-
-		>>> Checker().assert_free('::', free_port)
 		"""
 		if port is None and isinstance(host, collections.Sequence):
 			host, port = host[:2]
 		if platform.system() == 'Windows':
 			host = client_host(host)
+		if is_ipv6_enabled():
+			family = socket.AF_UNSPEC
+		else:
+			family = socket.AF_INET
 		info = socket.getaddrinfo(
-			host, port, socket.AF_UNSPEC, socket.SOCK_STREAM,
+			host, port, family, socket.SOCK_STREAM,
 		)
 		list(itertools.starmap(self._connect, info))
 
@@ -152,14 +162,14 @@ def occupied(host, port, timeout=float('Inf')):
 wait_for_occupied_port = occupied
 
 
-def find_available_local_port():
+def find_available_local_port(family=socket.AF_INET):
 	"""
 	Find a free port on localhost.
 
 	>>> 0 < find_available_local_port() < 65536
 	True
 	"""
-	sock = socket.socket(socket.AF_INET6, socket.SOCK_STREAM)
+	sock = socket.socket(family, socket.SOCK_STREAM)
 	addr = '', 0
 	sock.bind(addr)
 	addr, port = sock.getsockname()[:2]
