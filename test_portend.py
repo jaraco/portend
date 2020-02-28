@@ -21,7 +21,7 @@ def socket_infos():
 
 
 def id_for_info(info):
-    af, = info[:1]
+    (af,) = info[:1]
     return str(af)
 
 
