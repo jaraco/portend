@@ -4,10 +4,10 @@
 .. image:: https://img.shields.io/pypi/pyversions/portend.svg
    :target: `PyPI link`_
 
-.. _PyPI link: https://pypi.org/project/skeleton
+.. _PyPI link: https://pypi.org/project/portend
 
-.. image:: https://dev.azure.com/jaraco/skeleton/_apis/build/status/jaraco.skeleton?branchName=master
-   :target: https://dev.azure.com/jaraco/skeleton/_build/latest?definitionId=1&branchName=master
+.. image:: https://dev.azure.com/jaraco/portend/_apis/build/status/jaraco.portend?branchName=master
+   :target: https://dev.azure.com/jaraco/portend/_build/latest?definitionId=1&branchName=master
 
 .. image:: https://img.shields.io/travis/jaraco/portend/master.svg
    :target: https://travis-ci.org/jaraco/portend
