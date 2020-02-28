@@ -1,3 +1,20 @@
+2.6
+===
+
+Package refresh.
+
+2.5
+===
+
+#10: Fix race condition in ``occupied`` and ``free``.
+
+2.4
+===
+
+#6: ``find_available_local_port`` now relies on
+    ``socket.getaddrinfo`` to find a suitable address
+    family.
+
 2.3
 ===
 

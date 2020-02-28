@@ -1,10 +1,20 @@
 .. image:: https://img.shields.io/pypi/v/portend.svg
-   :target: https://pypi.org/project/portend
+   :target: `PyPI link`_
 
 .. image:: https://img.shields.io/pypi/pyversions/portend.svg
+   :target: `PyPI link`_
+
+.. _PyPI link: https://pypi.org/project/portend
+
+.. image:: https://dev.azure.com/jaraco/portend/_apis/build/status/jaraco.portend?branchName=master
+   :target: https://dev.azure.com/jaraco/portend/_build/latest?definitionId=1&branchName=master
 
 .. image:: https://img.shields.io/travis/jaraco/portend/master.svg
    :target: https://travis-ci.org/jaraco/portend
+
+.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
+   :target: https://github.com/psf/black
+   :alt: Code style: Black
 
 .. image:: https://img.shields.io/appveyor/ci/jaraco/portend/master.svg
    :target: https://ci.appveyor.com/project/jaraco/portend/branch/master
@@ -50,7 +60,7 @@ a suitable port for binding locally::
 
 Portend additionally exposes the lower-level port checking functionality
 in the ``Checker`` class, which currently exposes only one public
-method, ``assert_free``.
+method, ``assert_free``::
 
     portend.Checker().assert_free('localhost', 31923)
 

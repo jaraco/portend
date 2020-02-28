@@ -1,30 +1,9 @@
-dist: xenial
-sudo: false
+dist: bionic
 language: python
 
 python:
-- 2.7
 - 3.6
-- &latest_py3 3.7
-
-jobs:
-  fast_finish: true
-  include:
-  - stage: deploy
-    if: tag IS present
-    python: *latest_py3
-    install: skip
-    script: skip
-    deploy:
-      provider: pypi
-      on:
-        tags: true
-        all_branches: true
-      user: jaraco
-      password:
-        secure: vdFaBpjDV3pL+wS+uBguSyrWzIMYI238bovE6TFeEbCeXkAFpoS+Po+HKw76dpcVN4eTRwOqYuw9kZ+4spnl1RmgeTEsT8VwJQQTkpRmQ6KzikTMXya2KI3wFuKpB1x7ZFVaLasxtZ4+MULwgH5tE31YDulLWKPIJ6mn5sYcL0d3BbbKS7QPalF3KhJatWHEXjpj7j0XzW9wkjmeY1cmaVj+YQxNk5wMJQtFnrzS6Q0VI3ju+2RSRQUjXvnTPkK9bR0HUAJQOG9BWfNjcSGkPLvSp5BqAUiER8WYP7EAxjy51GHJZnXl95LGd1i9rJX3S3fN/e7QrYcGsmXA/jNK9qJ3C+QBhF70DqgZn2m9t8bmTWIQexV2DLNTZydU6VfrLvXUUiudXmQV6wk5/yhiR9jAKY2cJAsbTZ8wtsjAqQybEJBDZGyMRiUhTpUXBxYI9v5kpdvPVNe/gmGRCjwMmzwvwdcVBGSkVqfWoijvIRiE5+5fqEn2WnfLc8r4aFIvf0kusS1ZgSy9tt9UKQIPPNt9s12BfKx/vobDrEbFLZvDR6Cxyucq4znR12LWijosZINWVwSOpTXfgGJpFbDHwWzI8Z7/xfeSYoWjg8XJl2yeiXG+jCKKvYjpOU3e2Pw5d+MvhIyJJnRFBb7+kDyZktGqECVsIUfWrrlkFXuVfAQ=
-      distributions: dists
-      skip_cleanup: true
+- &latest_py3 3.8
 
 cache: pip
 
