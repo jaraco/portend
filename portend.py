@@ -6,6 +6,8 @@ A simple library for managing the availability of ports.
 
 from __future__ import print_function, division
 
+__version__ = "2.6"
+
 import time
 import socket
 import argparse
