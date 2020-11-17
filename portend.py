@@ -1,10 +1,6 @@
-# -*- coding: future-fstrings -*-
-
 """
 A simple library for managing the availability of ports.
 """
-
-from __future__ import print_function, division
 
 import time
 import socket
@@ -13,13 +9,8 @@ import sys
 import itertools
 import contextlib
 import platform
-
-from six.moves import urllib
-
-try:
-    from collections import abc
-except ImportError:  # pragma: nocover
-    import collections as abc
+from collections import abc
+import urllib.parse
 
 from tempora import timing
 
