@@ -1,3 +1,8 @@
+v2.7.0
+======
+
+Refresh package. Require Python 3.6 or later.
+
 2.6
 ===
 
