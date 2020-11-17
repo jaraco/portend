@@ -6,8 +6,8 @@
 
 .. _PyPI link: https://pypi.org/project/portend
 
-.. image:: https://github.com/jaraco/skeleton/workflows/Automated%20Tests/badge.svg
-   :target: https://github.com/jaraco/skeleton/actions?query=workflow%3A%22Automated+Tests%22
+.. image:: https://github.com/jaraco/portend/workflows/Automated%20Tests/badge.svg
+   :target: https://github.com/jaraco/portend/actions?query=workflow%3A%22Automated+Tests%22
    :alt: Automated Tests
 
 .. image:: https://img.shields.io/badge/code%20style-black-000000.svg
