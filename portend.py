@@ -82,7 +82,7 @@ class Checker(object):
                 return
 
         # the connect succeeded, so the port isn't free
-        host, port  = sa[:2]
+        host, port = sa[:2]
         tmpl = "Port {port} is in use on {host}."
         raise PortNotFree(tmpl.format(**locals()))
 
