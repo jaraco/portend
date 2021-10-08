@@ -1,3 +1,9 @@
+v3.0.0
+======
+
+Removed legacy aliases ``wait_for_occupied_port``
+and ``wait_for_free_port``.
+
 v2.7.2
 ======
 
