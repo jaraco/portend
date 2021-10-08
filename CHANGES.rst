@@ -45,7 +45,7 @@ Fix README rendering.
 
 #5: Restored use of ``portend.client_host`` during
     ``assert_free`` check on Windows, fixing check
-    when the bind address is *ADDR_ANY.
+    when the bind address is ``*ADDR_ANY``.
 
 2.1
 ===
@@ -68,7 +68,7 @@ function for Python 2.6.
 1.7.1
 =====
 
-* 2: Use tempora, replacing deprecated jaraco.timing.
+* #2: Use tempora, replacing deprecated jaraco.timing.
 
 1.7
 ===
