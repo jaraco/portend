@@ -17,6 +17,9 @@
 .. image:: https://readthedocs.org/projects/portend/badge/?version=latest
    :target: https://portend.readthedocs.io/en/latest/?badge=latest
 
+.. image:: https://img.shields.io/badge/skeleton-2021-informational
+   :target: https://blog.jaraco.com/skeleton
+
 por·tend
 pôrˈtend/
 verb
