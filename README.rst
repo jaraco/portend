@@ -1,10 +1,7 @@
 .. image:: https://img.shields.io/pypi/v/portend.svg
-   :target: `PyPI link`_
+   :target: https://pypi.org/project/portend
 
 .. image:: https://img.shields.io/pypi/pyversions/portend.svg
-   :target: `PyPI link`_
-
-.. _PyPI link: https://pypi.org/project/portend
 
 .. image:: https://github.com/jaraco/portend/workflows/tests/badge.svg
    :target: https://github.com/jaraco/portend/actions?query=workflow%3A%22tests%22
