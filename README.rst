@@ -17,6 +17,9 @@
 .. image:: https://img.shields.io/badge/skeleton-2024-informational
    :target: https://blog.jaraco.com/skeleton
 
+.. image:: https://tidelift.com/badges/package/pypi/portend
+   :target: https://tidelift.com/subscription/pkg/pypi-portend?utm_source=pypi-portend&utm_medium=readme
+
 por·tend
 pôrˈtend/
 verb
@@ -62,3 +65,13 @@ method, ``assert_free``::
 If assert_free is passed a host/port combination that is occupied by
 a bound listener (i.e. a TCP connection is established to that host/port),
 assert_free will raise a ``PortNotFree`` exception.
+
+
+For Enterprise
+==============
+
+Available as part of the Tidelift Subscription.
+
+This project and the maintainers of thousands of other packages are working with Tidelift to deliver one enterprise subscription that covers all of the open source you use.
+
+`Learn more <https://tidelift.com/subscription/pkg/pypi-portend?utm_source=pypi-portend&utm_medium=referral&utm_campaign=github>`_.

@@ -45,6 +45,9 @@ doc = [
 	"furo",
 	"sphinx-lint",
 
+    # tidelift
+    "jaraco.tidelift >= 1.4",
+
 	# local
 ]
 

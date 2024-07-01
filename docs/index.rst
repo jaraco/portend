@@ -17,10 +17,12 @@ Welcome to |project| documentation!
     :show-inheritance:
 
 
+.. tidelift-referral-banner::
+
+
 Indices and tables
 ==================
 
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
-
