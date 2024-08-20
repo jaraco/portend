@@ -1,5 +1,5 @@
-import socket
 import contextlib
+import socket
 
 import pytest
 from tempora import timing
