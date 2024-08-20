@@ -123,7 +123,9 @@ def free(host, port, timeout=float('Inf')):
             return
         except PortNotFree:
             if timer.expired():
-                raise Timeout("Port {port} not free on {host}.".format(**locals()))
+                raise Timeout(
+                    "Port {port} not free on {host}.".format(**locals())
+                ) from None
             # Politely wait.
             time.sleep(0.1)
 
@@ -234,7 +236,7 @@ def _main(args=None):
         args.func(args.target.host, args.target.port, timeout=args.timeout)
     except Timeout as timeout:
         print(timeout, file=sys.stderr)
-        raise SystemExit(1)
+        raise SystemExit(1) from None
 
 
 __name__ == '__main__' and _main()
