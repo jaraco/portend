@@ -14,7 +14,7 @@
 .. image:: https://readthedocs.org/projects/portend/badge/?version=latest
    :target: https://portend.readthedocs.io/en/latest/?badge=latest
 
-.. image:: https://img.shields.io/badge/skeleton-2024-informational
+.. image:: https://img.shields.io/badge/skeleton-2025-informational
    :target: https://blog.jaraco.com/skeleton
 
 .. image:: https://tidelift.com/badges/package/pypi/portend
