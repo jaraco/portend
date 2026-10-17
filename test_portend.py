@@ -33,7 +33,7 @@ def build_addr_infos():
 
 @pytest.fixture(**build_addr_infos())
 def listening_addr(request):
-    af, socktype, proto, canonname, sa = request.param
+    af, socktype, proto, _canonname, sa = request.param
     sock = socket.socket(af, socktype, proto)
     sock.bind(sa)
     sock.listen(5)
@@ -43,7 +43,7 @@ def listening_addr(request):
 
 @pytest.fixture(**build_addr_infos())
 def nonlistening_addr(request):
-    af, socktype, proto, canonname, sa = request.param
+    *_, sa = request.param
     return sa
 
 
@@ -67,7 +67,7 @@ class TestChecker:
     def test_free_with_timeout(self, listening_addr):
         host, port = listening_addr[:2]
         with pytest.raises(portend.Timeout):
-            portend.free(*listening_addr[:2], timeout=0.3)
+            portend.free(host, port, timeout=0.3)
 
     def test_occupied_with_immediate_timeout(self, listening_addr, immediate_timeout):
         host, port = listening_addr[:2]
