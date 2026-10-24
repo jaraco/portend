@@ -65,7 +65,7 @@ class Checker:
         """
         if port is None and isinstance(host, abc.Sequence):
             host, port = host[:2]
-        if platform.system() == 'Windows':
+        if platform.system() in ['Windows', 'FreeBSD']:
             host = client_host(host)  # pragma: nocover
         info = socket.getaddrinfo(host, port, socket.AF_UNSPEC, socket.SOCK_STREAM)
         list(itertools.starmap(self._connect, info))
